@@ -1,0 +1,53 @@
+<div class="jumbotron container">
+	<ui-accordions>
+		<ui-accordion title="Accordion 1">
+			A população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!
+		</ui-accordion>		
+
+		<ui-accordion title="Accordion 2">
+			Primeiro eu queria cumprimentar os internautas. -Oi Internautas! Depois dizer que o meio ambiente é sem dúvida nenhuma uma ameaça ao desenvolvimento sustentável. E isso significa que é uma ameaça pro futuro do nosso planeta e dos nossos países. O desemprego beira 20%, ou seja, 1 em cada 4 portugueses.
+		</ui-accordion>		
+
+		<ui-accordion title="Accordion 3">
+			A população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!
+		</ui-accordion>		
+
+		<ui-accordion title="Accordion 4">
+			Primeiro eu queria cumprimentar os internautas. -Oi Internautas! Depois dizer que o meio ambiente é sem dúvida nenhuma uma ameaça ao desenvolvimento sustentável. E isso significa que é uma ameaça pro futuro do nosso planeta e dos nossos países. O desemprego beira 20%, ou seja, 1 em cada 4 portugueses.
+		</ui-accordion>	
+	</ui-accordions>
+
+
+	<h4>{{app}}</h4>
+
+
+
+	<ui-alert title="Ops, aconteceu um problema.">
+		{{error}}
+	</ui-alert>
+
+	<input class="form-control" type="text" ng-model="criterio" placeholder="O que voce esta buscando">
+	<table ng-show="contatos.length > 0" class="table">
+		<tr>
+			<th></th>
+			<!--<th>Serial</th>-->
+			<th><a href="" ng-click="ordernarPor('nome')">Nome</a></th>
+			<th><a href="" ng-click="ordernarPor('telefone')">Telefone</a></th>
+			<th>Operadora</th>
+			<th>Data</th>
+			<th></th>
+		</tr>
+		<tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | filter: criterio | orderBy: criterioDeOrdenacao :direcaoDaOrdenacao">
+			<td><input type="checkbox" ng-model="contato.selecionado"></td>
+			<!--<td>{{contato.serial}}</td>-->
+			<td>{{contato.nome | name | ellipsis:10}}</td>
+			<td>{{contato.telefone}}</td>
+			<td>{{contato.operadora.nome}}</td>
+			<td>{{contato.data | date: 'dd/MM/yyyy'}}</td>
+			<td><div style="width: 20px; height: 20px;" ng-style="{'background-color': contato.cor}"></div></td>
+		</tr>
+	</table>
+	<br>
+	<a href="#/novoContato" class="btn btn-primary">Adicionar contato</a>
+	
+</div>

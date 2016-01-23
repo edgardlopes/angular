@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="listaTelefonica">
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>Lista Telefonica</title>
+		<link rel="stylesheet" href="lib/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/ui.css">
+
+
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular/angular-messages.js"></script>
+		<script src="lib/angular/angular-route.js"></script>
+
+		<script src="lib/serialGenerator/serialGenerator.js"></script>
+		<script src="lib/accordion/uiAccordion.js"></script>
+	
+		<script src="js/app.js"></script>
+
+		<script src="js/controller/listaTelefonicaController.js"></script>
+		<script src="js/controller/novoContatoController.js"></script>
+		
+		<script src="js/service/contatoService.js"></script>
+		<script src="js/service/operadoraService.js"></script>
+
+		<script src="js/value/configValue.js"></script>
+		
+		<script src="js/config/serialGeneratorConfig.js"></script>
+		<script src="js/config/routeConfig.js"></script>
+
+		<script src="js/filter/nameFilter.js"></script>
+		<script src="js/filter/ellipsisFilter.js"></script>
+
+		<script src="js/directive/uiAlertDirective.js"></script>
+		<script src="js/directive/uiDateDirective.js"></script>
+
+
+
+	</head>
+	<body >
+		<div ng-view>
+			
+		</div>
+		<!--ng include só funciona no firefox, para funcionar no chrome deve ser atraves de um servidor-->
+		<div ng-include="'views/footer.html'"></div>
+	</body>
+</html>
+
+<!--
+ng model: pega algo da view e define (input, selects e text areas)
+//ng bind: pega algo do scope e exibe
+-->
