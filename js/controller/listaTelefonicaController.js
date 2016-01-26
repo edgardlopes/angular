@@ -10,7 +10,8 @@
 			operadorasAPI.getOperadoras().success(function (data){
 				$scope.operadoras = data;
 			});
-		};		
+		};
+
 
 		$scope.adicionarContato = function(contato){
 			contato.serial = serialGenerator.generate();

@@ -23,6 +23,11 @@ angular.module('listaTelefonica').config(function($routeProvider) {
 		}
 	});
 
+	$routeProvider.when('/contatos/:id', {
+			templateUrl: 'views/contato.html',
+			controller: 'contatoController'
+	});
+
 	//redireciona quando nao acha nenhuma pagina
 	$routeProvider.otherwise({redirectTo: '/contatos'});
 });
